@@ -25,7 +25,11 @@ export default new Router({
           {path: '/first/five', component: five, name: 'five'}
           ]
       }, {
-        path: '/second', component: second, name: 'second'
+        path: '/second', component: second, name: 'second',
+          children: [
+            {path: '/first/four', component: four, name: 'four'},
+            {path: '/first/five', component: five, name: 'five'}
+          ]
       }, {
         path: '/three', component: three, name: 'three'
       },
