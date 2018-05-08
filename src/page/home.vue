@@ -1,5 +1,5 @@
 <template>
-  <el-container style="border: 1px solid #eee">
+  <el-container class="main" style="border: 1px solid #eee">
     <el-aside width="200px">
       <div>
         <img src="../assets/logo.png" width="100" height="100">
@@ -52,37 +52,36 @@
     </el-container>
   </el-container>
 </template>
-<style scoped>
-  .el-header {
-    background-color: #B3C0D1;
-    color: #333;
-    line-height: 40px;
-  }
-
-  .el-dropdown-link {
-    cursor: pointer;
-    color: #409eff;
-  }
-
-  .el-menu {
-    border-right: none;
-  }
-
-  .el-main {
-    position: absolute;
-    top: 40px;
-    bottom: 0;
-    left: 200px;
-    right: 0;
-    padding: 10px;
-  }
-
-  .el-aside {
-    color: #545c64;
+<style scoped lang="less">
+  .main {
     position: absolute;
     top: 0;
     bottom: 0;
-    background-color: rgb(84, 92, 100)
+    left: 0;
+    right: 0;
+    display: flex;
+    .el-header {
+      background-color: #B3C0D1;
+      color: #333;
+      line-height: 40px;
+    }
+    .el-dropdown-link {
+      cursor: pointer;
+      color: #409eff;
+    }
+    .el-menu {
+      border-right: none;
+    }
+    .el-container{
+      flex: 1;
+    }
+    .el-aside {
+      flex:0 0 200px;;
+      width: 200px;
+      color: #545c64;
+      height: 100%;
+      background-color: rgb(84, 92, 100)
+    }
   }
 </style>
 
@@ -90,7 +89,7 @@
   export default {
     data() {
       return {
-        ahh:true
+        ahh: true
       };
     }
   };
