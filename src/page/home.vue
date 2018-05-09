@@ -76,7 +76,7 @@
       flex: 1;
     }
     .el-aside {
-      flex:0 0 200px;;
+      flex:0 0 200px;
       width: 200px;
       color: #545c64;
       height: 100%;
