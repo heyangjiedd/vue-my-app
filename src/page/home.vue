@@ -44,8 +44,7 @@
         </el-dropdown>
       </el-header>
       <el-container>
-        <transition name="fade"
-                    mode="out-in">
+        <transition name="el-zoom-in-top">
           <router-view></router-view>
         </transition>
       </el-container>
@@ -79,7 +78,7 @@
       background-color: rgb(84, 92, 100)
     }
     .el-main{
-      padding: 0;
+      /*padding: 0;*/
     }
   }
 </style>

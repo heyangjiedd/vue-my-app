@@ -1,15 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import home from '@/page/home'
+import login from '@/page/login'
 import first from '@/components/first'
 import second from '@/components/second'
 import three from '@/components/three'
 import four from '@/components/four'
 import five from '@/components/five'
 Vue.use(Router)
-
-export default new Router({
+const router = new Router({
   routes: [
+    {path: '/login', component: login,},
     {
       path: '/', component: home,
       //设置默认路由
@@ -19,23 +20,33 @@ export default new Router({
           {path: '', component: four, name: 'four'}
         ]
         },{
-        path: '/first', component: first, name: 'first',
-        children: [
-          //设置默认路由
-          {path: '', component: four, name: 'four'},
-          {path: '/first/four', component: four, name: 'four'},
-          {path: '/first/five', component: five, name: 'five'}
+          path: '/first', component: first, name: 'first',
+          children: [
+            //设置默认路由
+            {path: '', component: four, name: 'four'},
+            {path: '/first/four', component: four, name: 'four'},
+            {path: '/first/five', component: five, name: 'five'}
           ]
-      }, {
-        path: '/second', component: second, name: 'second',
+        }, {
+          path: '/second', component: second, name: 'second',
           children: [
             {path: '/first/four', component: four, name: 'four'},
             {path: '/first/five', component: five, name: 'five'}
           ]
-      }, {
-        path: '/three', component: three, name: 'three'
-      },
-    ]
+        }, {
+          path: '/three', component: three, name: 'three'
+        },
+      ]
     },
   ]
-})
+});
+//路由守卫
+router.beforeEach((to, from, next) => {
+  if(to.path != '/login'&&(!localStorage['username']||!localStorage['password'])){
+    next({ path: '/login' });
+  }else{
+    next();
+  }
+
+});
+export default router
