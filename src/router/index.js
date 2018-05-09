@@ -21,6 +21,8 @@ export default new Router({
         },{
         path: '/first', component: first, name: 'first',
         children: [
+          //设置默认路由
+          {path: '', component: four, name: 'four'},
           {path: '/first/four', component: four, name: 'four'},
           {path: '/first/five', component: five, name: 'five'}
           ]

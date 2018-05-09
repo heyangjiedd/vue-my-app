@@ -43,12 +43,12 @@
           </el-dropdown-menu>
         </el-dropdown>
       </el-header>
-      <el-main>
+      <el-container>
         <transition name="fade"
                     mode="out-in">
           <router-view></router-view>
         </transition>
-      </el-main>
+      </el-container>
     </el-container>
   </el-container>
 </template>
@@ -59,7 +59,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    display: flex;
     .el-header {
       background-color: #B3C0D1;
       color: #333;
@@ -72,15 +71,15 @@
     .el-menu {
       border-right: none;
     }
-    .el-container{
-      flex: 1;
-    }
     .el-aside {
       flex:0 0 200px;
       width: 200px;
       color: #545c64;
       height: 100%;
       background-color: rgb(84, 92, 100)
+    }
+    .el-main{
+      padding: 0;
     }
   }
 </style>
