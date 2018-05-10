@@ -2,11 +2,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import home from '@/page/home'
 import login from '@/page/login'
-import first from '@/components/first'
-import second from '@/components/second'
-import three from '@/components/three'
-import four from '@/components/four'
-import five from '@/components/five'
+import first from '@/page/first'
+import second from '@/page/second'
+import three from '@/page/three'
+import four from '@/page/four'
+import five from '@/page/five'
 Vue.use(Router)
 const router = new Router({
   routes: [

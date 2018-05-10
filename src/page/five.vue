@@ -1,5 +1,5 @@
 <template>
-<div>5</div>
+  <count-add></count-add>
 </template>
 <style>
 
