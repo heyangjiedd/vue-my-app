@@ -13,6 +13,8 @@ import store from './store'
 // import count from './components/count'
 // Vue.component('count-add', count);
 
+
+
 //全剧注册组件
 import count2 from './components/count2'
 Vue.component('count-add2', count2);
@@ -23,6 +25,8 @@ Vue.component('render1',render1 );
 import SmartList from './components/functional';
 Vue.component('SmartList',SmartList );
 
+import Bus from './bus/bus.js'
+Vue.prototype.Bus = Bus;
 
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false

@@ -7,10 +7,12 @@ import second from '@/page/second'
 import three from '@/page/three'
 import four from '@/page/four'
 import five from '@/page/five'
+import message from '@/componentTest/main'
 Vue.use(Router)
 const router = new Router({
   routes: [
     {path: '/login', component: login,},
+    {path: '/', component: message,},
     {
       path: '/', component: home,
       //设置默认路由
