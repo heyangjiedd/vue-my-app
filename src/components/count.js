@@ -14,14 +14,18 @@ export default {
   data: function () {
     return {
       input: 'hello',
-      title:'1111',
-      answer: ''
+      answer: {
+        a:3412414
+      }
     }
   },
   props:['title'],
   watch: {
     input: function (value) {
-      this.answer = value;
+      this.answer.b = value;
+      this.$nextTick(function () {
+          debugger
+      })
     }
   },
   methods: {
@@ -29,11 +33,12 @@ export default {
       this.$store.commit('increment')
     },
     update(e) {
-      this.input = e.target.value
+      this.input = e.target.value;
     }
   },
   template: '<div id="editor">' +
-  '<p>{{answer}}</p>' +
+  '<p>{{answer.a}}</p>' +
+  '<p>{{answer.b}}</p>' +
   '<textarea :value="input" @input="update"></textarea>' +
   '<div v-html="compiledMarkdown"></div>' +
   '<div>{{title}}</div>' +

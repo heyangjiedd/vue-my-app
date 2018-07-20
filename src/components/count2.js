@@ -1,6 +1,7 @@
 /**
  * Created by heyangjie on 2018/5/10.
  */
+
 export default {
   // data:function () {
   //   return {
@@ -17,6 +18,7 @@ export default {
       this.$store.commit('increment')
     }
   },
-  template:'<button v-on:click="change">点击{{count*2}}</button>'
+  template:'<button v-on:click="change">点击{{count*2}}</button>' +
+  ''
 }
 
